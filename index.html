@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CANVAS</title>
+<style>
+#miCanvas{
+    border:dotted 2px rgb(255, 0, 204);
+    background-image: url("imagenes/negro2.jpg"); 
+    margin-left: 380px;
+}
+
+body{
+background-color: black;
+width: 900px;
+height: 500px;
+}
+
+#estrella{
+    border-radius:50%;
+    background-color: transparent;
+    height: 100px;
+    width: 100px;
+}
+#elboton{
+    border-radius:50%;
+    background-color: transparent;
+    height: 100px;
+    width: 100px;
+    margin-left: 700px;
+}
+
+</style>
+<script>
+window.onload = function(){
+    var canvas = document.getElementById("miCanvas");
+    if(canvas && canvas.getContext){
+        var ctx = canvas.getContext("2d");
+        if(ctx){
+            //Descripcion de lineas
+            ctx.lineWidth = 10;
+            ctx.strokeStyle = "red";
+            ctx.fillStyle = "red";
+           
+            //Letra E    
+
+            ctx.lineWidth = 10;
+            ctx.strokeStyle = "yellow";
+         
+            ctx.beginPath();
+            //Vertical
+            ctx.moveTo(50,20); //izquierda y arriba
+            ctx.lineTo(50,120); //derecha abajo
+            
+            //Horizontal
+            ctx.moveTo(50,25);
+            ctx.lineTo(65,25);
+            ctx.moveTo(50,70);
+            ctx.lineTo(75,70);
+            ctx.moveTo(50,115);
+            ctx.lineTo(75,115);    
+            ctx.stroke();
+
+            //Letra Y
+            ctx.lineWidth = 15;
+            ctx.strokeStyle = "blue"
+            ctx.fillStyle = "red";
+            ctx.beginPath();
+            ctx.moveTo(120,35);
+            ctx.lineTo(160,70);
+            ctx.closePath();
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(150, 120);
+            ctx.lineTo(170,20);
+            ctx.closePath();
+            ctx.stroke();
+
+            
+            //Letra A
+            ctx.lineWidth = 10;
+            ctx.strokeStyle = "red"
+            ctx.fillStyle = "red";
+            //vertical
+            ctx.beginPath();
+            ctx.moveTo(230,20);
+            ctx.lineTo(200,120);
+            ctx.moveTo(230,20);
+            ctx.lineTo(260,120);
+            ctx.moveTo(210,90);
+            ctx.lineTo(250,90);
+            ctx.stroke();
+
+            //LETRA D
+
+            ctx.beginPath();
+            ctx.moveTo(300,20);
+            ctx.lineTo(300,120);
+            ctx.moveTo(340,30);
+            ctx.lineTo(340,100);
+            ctx.moveTo(300,120);
+            ctx.lineTo(340,100);
+            ctx.moveTo(300,20);
+            ctx.lineTo(345,35);
+            ctx.stroke();
+
+            //letra I
+            ctx.beginPath();
+            ctx.moveTo(400,20);
+            ctx.lineTo(400,120);
+            ctx.stroke();
+
+            //letra I
+            ctx.beginPath();
+            ctx.moveTo(450,20);
+            ctx.lineTo(450,120);
+            ctx.moveTo(480,120);
+            ctx.lineTo(450,60);
+            ctx.arc(450,50,30, 0, 1.1*Math.PI,true);
+            ctx.stroke();
+            
+             //Letra A
+           
+            //vertical
+            ctx.beginPath();
+            ctx.moveTo(540,20);
+            ctx.lineTo(500,120);
+            ctx.moveTo(540,20);
+            ctx.lineTo(570,120);
+            ctx.moveTo(510,90);
+            ctx.lineTo(560,90);
+            ctx.stroke();
+          
+
+        
+            4
+        } else {
+            alert("Error al crear tu contexto");    
+        }    }
+}
+</script>
+</head>
+<body>
+<h1>Mi Proyecto</h1>
+<canvas id="miCanvas" width="800px" height="600px">
+Tu navegador no soporta CANVAS
+
+</canvas>
+
+<div class="boton"><a href="Invaeya.html"><button type="button" id="elboton"><img src="imagenes/Inicio.png" id="estrella"></button></a></a></div> 
+</body>
+</html>
